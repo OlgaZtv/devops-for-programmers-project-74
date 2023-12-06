@@ -12,3 +12,6 @@ up:
 
 up-abort-exit-code:
  docker-compose --project-name myproject -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+
+ci:
+ docker-compose -f docker-compose.yml up --abort-on-container-exit
