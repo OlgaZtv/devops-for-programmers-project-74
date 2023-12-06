@@ -6,6 +6,12 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_HOST: db
+      DATABASE_NAME: postgres
+      DATABASE_USERNAME: ${{ secrets.DB_USERNAME }}
+      DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
