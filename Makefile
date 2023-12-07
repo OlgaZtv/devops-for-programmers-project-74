@@ -1,17 +1,19 @@
-install:
-	docker-compose	--project-name	myproject	run	--rm	app	npm	ci
+setup:
+	docker-compose run --rm app npm ci
 
-test:
-	docker-compose --project-name myproject run --rm app npm test
-
-up-abort:
-	docker-compose --project-name myproject up --abort-on-container-exit
-
-up:
-	docker-compose --project-name myproject up
-
-up-abort-exit-code:
-	docker-compose --project-name myproject -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+dev:
+	$(MAKE) prepare-env
+	docker-compose up --abort-on-container-exit --exit-code-from app
 
 ci:
-	docker-compose -f docker-compose.yml up --abort-on-container-exit
+	$(MAKE) prepare-env
+	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+
+build:
+	docker-compose -f docker-compose.yml build app
+
+down:
+	docker-compose down app
+
+prepare-env:
+	if [ ! -f .env ]; then cp .env.example .env; fi
