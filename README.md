@@ -24,22 +24,14 @@
 git clone https://github.com/OlgaZtv/devops-for-programmers-project-74.git
 cd devops-for-programmers-project-74
 ```
+## Run Development
 
-3. Установите зависимости проекта:
+1. `make setup`
+2. `make dev`
 
-```js
-npm install
-```
-4. Приложение использует Docker, выполните следующие действия:
+## Run Tests
 
-- Создайте Docker-образ:
-```bash
-docker build -t olgaztv/devops-for-programmers-project-74:latest .
-```
-- Затем запустите контейнер с образом:
-```bash
-  docker run -p 8080:8080 olgaztv/devops-for-programmers-project-74:latest
-```
+1. `make ci`
 
 ## Docker-образ на Docker Hub
 Docker-образ доступен на Docker Hub по следующей ссылке / имени:
