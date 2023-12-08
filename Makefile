@@ -1,18 +1,18 @@
-setup:
+compose-setup:
 	docker-compose run --rm app npm ci
 
-dev:
+compose-dev:
 	$(MAKE) prepare-env
 	docker-compose up --abort-on-container-exit --exit-code-from app
 
-ci:
+compose-ci:
 	$(MAKE) prepare-env
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
-build:
+compose-build:
 	docker-compose -f docker-compose.yml build app
 
-down:
+compose-down:
 	docker-compose down app
 
 prepare-env:

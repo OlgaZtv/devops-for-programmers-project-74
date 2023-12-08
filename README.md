@@ -12,7 +12,7 @@
 - Node.js (версия 14.x)
 - npm (версия 6.x)
 - Система управления контейнерами (Docker)
-- База данных (PostgreSQL)
+- База данных (PostgreSQL, версия 16.х)
 
 ## Инструкции по настройке и запуску
 
@@ -26,12 +26,12 @@ cd devops-for-programmers-project-74
 ```
 ## Run Development
 
-1. `make setup`
-2. `make dev`
+1. `make compose-setup`
+2. `make compose-dev`
 
 ## Run Tests
 
-1. `make ci`
+1. `make compose-ci`
 
 ## Docker-образ на Docker Hub
 Docker-образ доступен на Docker Hub по следующей ссылке / имени:
